@@ -106,7 +106,7 @@
       "format": "<b>{0}</b>",
       "interval": 3600,
       "tooltip": false
-    },
+    }
   },
   {
     // Bar dimensions and position
@@ -162,6 +162,6 @@
       },
       "escape": true,
       "exec": "~/.config/waybar/bin/mediaplayer.py"
-    },
+    }
   }
 ]
