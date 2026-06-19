@@ -1,4 +1,4 @@
-@import "/home/zus/.config/waybar/color-scheme.css";
+@import "/home/zus/.config/waybar/color-schemes/everforest_dark_hard.css";
 
 /* 
  * Common configuration
@@ -7,24 +7,23 @@
   font-family: FontAwesome, DejaVu Sans Mono, monospace, sans-serif;
   font-size: 14px;
   border: none;
-  border-radius: 10px;
 }
 
 button:hover {
-  background: @base01;
-  color: @base06;
+  background: @bg_visual;
+  color: @grey0;
   border: inherit;
   box-shadow: inherit;
   text-shadow: inherit;
 }
 
 label:focus {
-  background-color: @base00;
+  background-color: @bg1;
 }
 
 @keyframes blink {
   to {
-    color: @base08;
+    color: @yellow;
   }
 }
 
@@ -32,22 +31,22 @@ label:focus {
  * Waybar tooltips
  */
 tooltip {
-  color: @base05;
-  background-color: @base01;
+  color: @grey2;
+  background-color: @bg2;
   text-shadow: none;
-  opacity: 0.95;
+  opacity: 0.90;
 }
 
 tooltip * {
-  color: @base05;
+  color: @grey2;
 }
 
 /*
  * Waybar window
  */
 window#waybar {
-  background-color: transparent;
-  color: @base05;
+  background-color: @bg_dim;
+  color: @fg;
   transition-property: background-color;
   transition-duration: .5s;
 }
@@ -77,6 +76,7 @@ window#waybar.hidden {
   padding: 0 10px 0 5px;
 }
 
+#clock,
 #backlight,
 #battery,
 #cpu,
@@ -89,7 +89,26 @@ window#waybar.hidden {
 #pulseaudio,
 #temperature,
 #tray {
-  color: @base05;
+  color: @grey2;
+}
+
+#workspaces button,
+#custom-banner,
+#custom-media,
+#custom-spotify,
+#backlight,
+#battery,
+#cpu,
+#disk,
+#idle_inhibitor,
+#memory,
+#mode,
+#mpd,
+#network,
+#pulseaudio,
+#temperature,
+#tray {
+  border-radius: 10px;
 }
 
 /*
@@ -101,16 +120,16 @@ window#waybar.hidden {
 }
 
 #battery.warning {
-  color: @base0A;
+  color: @yellow;
 }
 
 #battery.critical {
-  color: @base08;
+  color: @red;
 }
 
 #battery.critical:not(.charging) {
-  color: @base0A;
-  background-color: @base08;
+  color: @red;
+  background-color: @bg_red;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -121,22 +140,19 @@ window#waybar.hidden {
 /*
  * Clock
  */
-#clock {
-  color: @base0D;
-}
 
 /*
  * Media
  */
 #custom-media {
   padding: 0 20px 0 9px;
-  color: @base00;
-  background-color: @base0D;
+  color: @fg;
+  background-color: @bg1;
   min-width: 100px;
 }
 
 #custom-media.custom-spotify {
-  color: @base00;
+  color: @bg_dim;
   background-color: #66cc99;
 }
 
@@ -145,8 +161,8 @@ window#waybar.hidden {
  */
 #custom-banner {
   padding: 0 12px 0 12px;
-  color: @base00;
-  background-color: @base0D;
+  color: @fg;
+  background-color: @bg1;
   min-width: 100px;
 }
 
@@ -159,8 +175,8 @@ window#waybar.hidden {
 }
 
 #idle_inhibitor.activated {
-  color: @base00;
-  background-color: @base0D;
+  color: @fg;
+  background-color: @bg1;
 }
 
 /*
@@ -193,15 +209,15 @@ window#waybar.hidden {
  * Mode
  */
 #mode {
-  background-color: @base00;
-  color: @base05;
+  background-color: @bg1;
+  color: @fg;
 }
 
 /*
  * MPD
  */
 #mpd.disconnected {
-  color: @base0A;
+  color: @fg;
 }
 
 /*
@@ -213,7 +229,7 @@ window#waybar.hidden {
 }
 
 #network.disconnected {
-  color: @base08;
+  color: @red;
 }
 
 /*
@@ -221,7 +237,8 @@ window#waybar.hidden {
  */
 #temperature.critical {
   font-size: 22px;
-  color: @base08;
+  color: @red;
+  background-color: @bg_red
 }
 
 /*
@@ -233,7 +250,7 @@ window#waybar.hidden {
 
 #tray > .needs-attention {
   -gtk-icon-effect: highlight;
-  background-color: @base0A;
+  background-color: @bg_yellow;
 }
 
 /*
@@ -245,7 +262,7 @@ window#waybar.hidden {
 
 #workspaces button {
   background-color: transparent;
-  color: @base05;
+  color: @grey0;
   border: none;
 }
 
@@ -286,20 +303,20 @@ window#waybar.hidden {
 }
 
 #workspaces button:hover {
-  background: @base01;
-  color: @base06;
+  background: @bg0;
+  color: @fg;
   box-shadow: inherit;
   text-shadow: inherit;
 }
 
 #workspaces button.focused {
-  background-color: @base0D;
-  color: @base00;
+  background-color: @bg1;
+  color: @fg;
 }
 
 #workspaces button.urgent {
-  background-color: @base0A;
-  color: @base00;
+  background-color: @bg_yellow;
+  color: @yellow;
 }
 
 #workspaces button:nth-child(3) {

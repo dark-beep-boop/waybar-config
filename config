@@ -2,10 +2,10 @@
   {
     // Bar dimensions
     "height": 30,
-    "spacing": 4,
-    "margin-top": 10,
-    "margin-left": 10,
-    "margin-right": 10,
+    "spacing": 5,
+    "margin-top": 0,
+    "margin-left": 0,
+    "margin-right": 0,
     "margin-bottom": 0,
 
     // Where to show the bar
@@ -13,9 +13,9 @@
     "output": ["eDP-1"],
 
     // Choose the order of the modules
-    "modules-left": ["clock", "custom/banner"],
+    "modules-left": ["custom/spacer", "clock", "custom/banner"],
     "modules-center": ["sway/workspaces"],
-    "modules-right": ["pulseaudio", "network", "battery"],
+    "modules-right": ["pulseaudio", "network", "battery", "custom/spacer"],
 
     // Modules configuration
     "sway/workspaces": {
@@ -51,7 +51,7 @@
       "interval": 1,
       "tooltip-format": "{calendar}",
       "format-alt": "{:%a %d %B %Y}",
-      "format": "{:%T}"
+      "format": "<b>{:%T}</b>"
     },
     "network": {
       "format-wifi": "",
@@ -84,11 +84,11 @@
       "spacing": 10
     },
     "pulseaudio": {
-      "format": "{volume}% {icon}  {format_source}",
-      "format-bluetooth": "{volume}% {icon} {format_source}",
-      "format-bluetooth-muted": "  {icon} {format_source}",
-      "format-muted": "  {format_source}",
-      "format-source": "{volume}% ",
+      "format": "<b>{volume}% {icon}  {format_source}</b>",
+      "format-bluetooth": "<b>{volume}% {icon} {format_source}</b>",
+      "format-bluetooth-muted": "<b>  {icon} {format_source}</b>",
+      "format-muted": "<b>  {format_source}</b>",
+      "format-source": "<b>{volume}% </b>",
       "format-source-muted": "",
       "format-icons": {
         "headphone": "󰋋",
@@ -106,26 +106,30 @@
       "format": "<b>{0}</b>",
       "interval": 3600,
       "tooltip": false
+    },
+    "custom/spacer": {
+      "format": " ",
+      "tooltip": false
     }
   },
   {
     // Bar dimensions and position
     "position": "bottom",
     "height": 30,
-    "spacing": 4,
+    "spacing": 5,
     "margin-top": 0,
-    "margin-left": 10,
-    "margin-right": 10,
-    "margin-bottom": 10,
+    "margin-left": 0,
+    "margin-right": 0,
+    "margin-bottom": 0,
 
     // Where to show the bar
     //"output": ["eDP-1", "DP-7"],
     "output": ["eDP-1"],
 
     // Choose the order of the modules
-    "modules-left": ["tray", "sway/mode", "custom/media"],
+    "modules-left": ["custom/spacer", "tray", "sway/mode", "custom/media"],
     "modules-center": ["idle_inhibitor"],
-    "modules-right": ["cpu", "memory", "temperature", "backlight"],
+    "modules-right": ["cpu", "memory", "temperature", "backlight", "custom/spacer"],
     "sway/mode": {
       "format": "<span style=\"italic\">{}</span>"
     },
@@ -137,23 +141,23 @@
       }
     },
     "cpu": {
-      "format": "{usage}% CPU",
+      "format": "<b>{usage}% CPU</b>",
       "tooltip": false
     },
     "memory": {
-      "format": "{}% MEM"
+      "format": "<b>{}% MEM</b>"
     },
     "temperature": {
       "critical-threshold": 80,
-      "format": "{temperatureC}°C {icon}",
+      "format": "<b>{temperatureC}°C {icon}</b>",
       "format-icons": ["", "", "", "", ""]
     },
     "backlight": {
-      "format": "{percent}% {icon}",
+      "format": "<b>{percent}% {icon}</b>",
       "format-icons": ["󰛩", "󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"]
     },
     "custom/media": {
-      "format": "{icon} {0}",
+      "format": "<b>{icon} {0}</b>",
       "return-type": "json",
       "max-length": 40,
       "format-icons": {
@@ -162,6 +166,10 @@
       },
       "escape": true,
       "exec": "~/.config/waybar/bin/mediaplayer.py"
+    },
+    "custom/spacer": {
+      "format": " ",
+      "tooltip": false
     }
   }
 ]
