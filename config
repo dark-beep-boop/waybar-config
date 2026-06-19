@@ -3,10 +3,7 @@
     // Bar dimensions
     "height": 30,
     "spacing": 5,
-    "margin-top": 0,
-    "margin-left": 0,
-    "margin-right": 0,
-    "margin-bottom": 0,
+    "margin": 0,
 
     // Where to show the bar
     //"output": ["eDP-1", "DP-7"],
@@ -50,8 +47,8 @@
     "clock": {
       "interval": 1,
       "tooltip-format": "{calendar}",
-      "format-alt": "{:%a %d %B %Y}",
-      "format": "<b>{:%T}</b>"
+      "format-alt": "<b>{:%a %d %B %Y}</b>",
+      "format": "<b>{:%T}\t</b>"
     },
     "network": {
       "format-wifi": "",
@@ -117,10 +114,7 @@
     "position": "bottom",
     "height": 30,
     "spacing": 5,
-    "margin-top": 0,
-    "margin-left": 0,
-    "margin-right": 0,
-    "margin-bottom": 0,
+    "margin": 0,
 
     // Where to show the bar
     //"output": ["eDP-1", "DP-7"],
