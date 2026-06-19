@@ -7,6 +7,7 @@
   font-family: FontAwesome, DejaVu Sans Mono, monospace, sans-serif;
   font-size: 14px;
   border: none;
+  border-radius: 10px;
 }
 
 button:hover {
@@ -34,7 +35,6 @@ tooltip {
   color: @base05;
   background-color: @base01;
   text-shadow: none;
-  border-radius: 10px;
   opacity: 0.95;
 }
 
@@ -75,23 +75,6 @@ window#waybar.hidden {
 #temperature,
 #tray {
   padding: 0 10px 0 5px;
-}
-
-#backlight,
-#battery,
-#clock,
-#cpu,
-#custom-media,
-#custom-banner,
-#disk,
-#memory,
-#mode,
-#mpd,
-#network,
-#pulseaudio,
-#temperature,
-#tray {
-  border-radius: 15px;
 }
 
 #backlight,
@@ -171,7 +154,6 @@ window#waybar.hidden {
  * Inhibitor
  */
 #idle_inhibitor {
-  border-radius: 15px;
   font-size: 22px;
   padding: 0 9px 0 9px;
 }
@@ -245,10 +227,6 @@ window#waybar.hidden {
 /*
  * Tray
  */
-#tray {
-  border-radius: 15px;
-}
-
 #tray > .passive {
   -gtk-icon-effect: dim;
 }
@@ -269,7 +247,6 @@ window#waybar.hidden {
   background-color: transparent;
   color: @base05;
   border: none;
-  border-radius: 15px;
 }
 
 #workspaces button#sway-workspace-1 {
