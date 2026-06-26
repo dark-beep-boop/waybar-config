@@ -115,8 +115,8 @@ window#waybar.hidden {
  * Battery
  */
 #battery {
-  font-size: 22px;
-  padding: 0 15px 0 8px;
+  /*font-size: 22px;*/
+  padding: 0 9px 0 8px;
 }
 
 #battery.warning {
@@ -125,6 +125,10 @@ window#waybar.hidden {
 
 #battery.critical {
   color: @red;
+}
+
+#battery.charging {
+  /*font-size: 22px;*/
 }
 
 #battery.critical:not(.charging) {
@@ -170,7 +174,7 @@ window#waybar.hidden {
  * Inhibitor
  */
 #idle_inhibitor {
-  font-size: 22px;
+  /*font-size: 22px;*/
   padding: 0 9px 0 9px;
 }
 
@@ -225,7 +229,7 @@ window#waybar.hidden {
  */
 #network {
   padding: 0 15px 0 7px;
-  font-size: 22px;
+  /*font-size: 22px;*/
 }
 
 #network.disconnected {
@@ -236,7 +240,7 @@ window#waybar.hidden {
  * Temperature
  */
 #temperature.critical {
-  font-size: 22px;
+  /*font-size: 22px;*/
   color: @red;
   background-color: @bg_red
 }
@@ -324,7 +328,7 @@ window#waybar.hidden {
 }
 
 #workspaces button label {
-  font-size: 22px;
+  /*font-size: 22px;*/
 }
 
 #workspaces button:nth-child(1) label {
