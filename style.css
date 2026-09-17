@@ -73,7 +73,7 @@ window#waybar.hidden {
 #pulseaudio,
 #temperature,
 #tray {
-  padding: 0 10px 0 5px;
+  padding: 0 14px 0 8px;
 }
 
 #clock,
@@ -174,8 +174,7 @@ window#waybar.hidden {
  * Inhibitor
  */
 #idle_inhibitor {
-  /*font-size: 22px;*/
-  padding: 0 9px 0 9px;
+  padding: 0 14px 0 8px;
 }
 
 #idle_inhibitor.activated {
@@ -228,8 +227,7 @@ window#waybar.hidden {
  * Network
  */
 #network {
-  padding: 0 15px 0 7px;
-  /*font-size: 22px;*/
+  padding: 0 14px 0 8px;
 }
 
 #network.disconnected {
@@ -240,7 +238,6 @@ window#waybar.hidden {
  * Temperature
  */
 #temperature.critical {
-  /*font-size: 22px;*/
   color: @red;
   background-color: @bg_red
 }
@@ -271,39 +268,43 @@ window#waybar.hidden {
 }
 
 #workspaces button#sway-workspace-1 {
-  padding: 0 7px 0 8px;
+  padding: 0 10px 0 4px;
 }
 
 #workspaces button#sway-workspace-2 {
-  padding: 0 7px 0 8px;
+  padding: 0 11px 0 3px;
 }
 
 #workspaces button#sway-workspace-3 {
-  padding: 0 7px 0 7px;
+  padding: 0 8px 0 6px;
 }
 
 #workspaces button#sway-workspace-4 {
-  padding: 0 7px 0 8px;
+  padding: 0 9px 0 5px;
 }
 
 #workspaces button#sway-workspace-5 {
-  padding: 0 7px 0 8px;
+  padding: 0 9px 0 5px;
 }
 
 #workspaces button#sway-workspace-6 {
-  padding: 0 7px 0 8px;
+  padding: 0 9px 0 5px;
 }
 
 #workspaces button#sway-workspace-7 {
-  padding: 0 7px 0 8px;
+  padding: 0 9px 0 5px;
 }
 
 #workspaces button#sway-workspace-8 {
-  padding: 0 7px 0 8px;
+  padding: 0 9px 0 5px;
 }
 
 #workspaces button#sway-workspace-9 {
-  padding: 0 7px 0 8px;
+  padding: 0 10px 0 4px;
+}
+
+#workspaces button#sway-workspace-10 {
+  padding: 0 10px 0 4px;
 }
 
 #workspaces button:hover {
@@ -325,10 +326,6 @@ window#waybar.hidden {
 
 #workspaces button:nth-child(3) {
   padding: 0 9px;
-}
-
-#workspaces button label {
-  /*font-size: 22px;*/
 }
 
 #workspaces button:nth-child(1) label {

@@ -6,7 +6,6 @@
     "margin": 0,
 
     // Where to show the bar
-    //"output": ["eDP-1", "DP-7"],
     "output": ["eDP-1"],
 
     // Choose the order of the modules
@@ -27,9 +26,10 @@
         "6": [],
         "7": [],
         "8": [],
-        "9": []
+        "9": [],
+        "10": []
       },
-      "format": "<span size=\"x-large\">{icon}</span>",
+      "format": "{icon}",
       "format-icons": {
         "1": "",
         "2": "",
@@ -51,13 +51,13 @@
       "format": "<b>{:%T}\t</b>"
     },
     "network": {
-      "format-wifi": "<span size=\"x-large\"></span>",
-      "tooltip-format-wifi": "connected to {essid} ({signalStrength}%) with {ifname} via {gwaddr} <span size=\"x-large\"></span>",
-      "format-ethernet": "<span size=\"x-large\">󰈀</span>",
-      "tooltip-format-ethernet": "connected as {ipaddr}/{cidr} with {ifname} via {gwaddr} <span size=\"x-large\">󰈀</span>",
-      "format-linked": "<span size=\"x-large\">󰈀</span>",
-      "tooltip-format-linked": "connected (No IP) with {ifname} via {gwaddr} <span size=\"x-large\">󰈀</span>",
-      "format-disconnected": "<span size=\"x-large\">󰈂</span>",
+      "format-wifi": "",
+      "tooltip-format-wifi": "connected to {essid} ({signalStrength}%) with {ifname} via {gwaddr} ",
+      "format-ethernet": "󰈀",
+      "tooltip-format-ethernet": "connected as {ipaddr}/{cidr} with {ifname} via {gwaddr} 󰈀",
+      "format-linked": "󰈀",
+      "tooltip-format-linked": "connected (No IP) with {ifname} via {gwaddr} 󰈀",
+      "format-disconnected": "󰈂",
       "tooltip-format-disconnected": "disconnected",
       "on-click": "kitty --class scratch nmtui-connect"
     },
@@ -76,23 +76,23 @@
       "format-plugged": "",
       "tooltip-format-plugged": "{capacity}% (charge)",
       "format-icons": [
-        "<span size=\"x-large\"></span>",
-        "<span size=\"x-large\"></span>",
-        "<span size=\"x-large\"></span>",
-        "<span size=\"x-large\"></span>",
-        "<span size=\"x-large\"></span>"
+        "",
+        "",
+        "",
+        "",
+        ""
       ]
     },
     "tray": {
       "spacing": 10
     },
     "pulseaudio": {
-      "format": "<b>{volume}% <span size=\"x-large\">{icon}</span>  {format_source}</b>",
-      "format-bluetooth": "<b>{volume}% <span size=\"x-large\">{icon}</span><span size=\"x-large\"></span> {format_source}</b>",
-      "format-bluetooth-muted": "<b><span size=\"x-large\"></span>  <span size=\"x-large\">{icon}</span><span size=\"x-large\"></span> {format_source}</b>",
-      "format-muted": "<b><span size=\"x-large\"></span>  {format_source}</b>",
-      "format-source": "<b>{volume}% <span size=\"x-large\"></span></b>",
-      "format-source-muted": "<span size=\"x-large\"></span>",
+      "format": "<b>{volume}% {icon}  {format_source}</b>",
+      "format-bluetooth": "<b>{volume}% {icon} {format_source}</b>",
+      "format-bluetooth-muted": "<b>  {icon} {format_source}</b>",
+      "format-muted": "<b>  {format_source}</b>",
+      "format-source": "<b>{volume}% </b>",
+      "format-source-muted": "",
       "format-icons": {
         "headphone": "󰋋",
         "hands-free": "󰋋",
@@ -123,7 +123,6 @@
     "margin": 0,
 
     // Where to show the bar
-    //"output": ["eDP-1", "DP-7"],
     "output": ["eDP-1"],
 
     // Choose the order of the modules
@@ -131,10 +130,10 @@
     "modules-center": ["idle_inhibitor"],
     "modules-right": ["cpu", "memory", "temperature", "backlight", "custom/spacer"],
     "sway/mode": {
-      "format": "<span style=\"italic\">{}</span>"
+      "format": "<span style=\"italic\">{}"
     },
     "idle_inhibitor": {
-      "format": "<span size=\"x-large\">{icon}</span>",
+      "format": "{icon}",
       "format-icons": {
         "activated": "",
         "deactivated": ""
@@ -153,11 +152,11 @@
       "format-icons": ["", "", "", "", ""]
     },
     "backlight": {
-      "format": "<b>{percent}% <span size=\"x-large\">{icon}</span></b>",
+      "format": "<b>{percent}% {icon}</b>",
       "format-icons": ["󰛩", "󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"]
     },
     "custom/media": {
-      "format": "<b><span size=\"x-large\">{icon}</span> {0}</b>",
+      "format": "<b>{icon} {0}</b>",
       "return-type": "json",
       "max-length": 40,
       "format-icons": {

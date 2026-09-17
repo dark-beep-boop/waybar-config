@@ -1,0 +1,174 @@
+[
+  {
+    // Bar dimensions
+    "height": 30,
+    "spacing": 5,
+    "margin": 0,
+
+    // Where to show the bar
+    "output": ["DP-6"],
+
+    // Choose the order of the modules
+    "modules-left": ["custom/spacer", "clock", "custom/banner"],
+    "modules-center": ["sway/workspaces"],
+    "modules-right": ["pulseaudio", "network", "battery", "custom/spacer"],
+
+    // Modules configuration
+    "sway/workspaces": {
+      "disable-scroll": true,
+      "all-outputs": true,
+      "persistent-workspaces": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": [],
+        "6": [],
+        "7": [],
+        "8": [],
+        "9": [],
+        "10": []
+      },
+      "format": "{icon}",
+      "format-icons": {
+        "1": "",
+        "2": "",
+        "3": "󰅩",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "urgent": "",
+        "default": ""
+      }
+    },
+    "clock": {
+      "interval": 1,
+      "tooltip-format": "{calendar}",
+      "format-alt": "<b>{:%a %d %B %Y}</b>",
+      "format": "<b>{:%T}\t</b>"
+    },
+    "network": {
+      "format-wifi": "",
+      "tooltip-format-wifi": "connected to {essid} ({signalStrength}%) with {ifname} via {gwaddr} ",
+      "format-ethernet": "󰈀",
+      "tooltip-format-ethernet": "connected as {ipaddr}/{cidr} with {ifname} via {gwaddr} 󰈀",
+      "format-linked": "󰈀",
+      "tooltip-format-linked": "connected (No IP) with {ifname} via {gwaddr} 󰈀",
+      "format-disconnected": "󰈂",
+      "tooltip-format-disconnected": "disconnected",
+      "on-click": "kitty --class scratch nmtui-connect"
+    },
+    "battery": {
+      "states": {
+        "good": 95,
+        "warning": 30,
+        "critical": 15
+      },
+      "format": "{icon}",
+      "tooltip-format": "{capacity}% (remaining time: {time})",
+      "format-charging": "",
+      "tooltip-format-charging": "{capacity}% (time to full charge: {time})",
+      "format-not-charging": "",
+      "tooltip-format-not-charging": "{capacity}% (not charging)",
+      "format-plugged": "",
+      "tooltip-format-plugged": "{capacity}% (charge)",
+      "format-icons": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "tray": {
+      "spacing": 10
+    },
+    "pulseaudio": {
+      "format": "<b>{volume}% {icon}  {format_source}</b>",
+      "format-bluetooth": "<b>{volume}% {icon} {format_source}</b>",
+      "format-bluetooth-muted": "<b>  {icon} {format_source}</b>",
+      "format-muted": "<b>  {format_source}</b>",
+      "format-source": "<b>{volume}% </b>",
+      "format-source-muted": "",
+      "format-icons": {
+        "headphone": "󰋋",
+        "hands-free": "󰋋",
+        "headset": "󰋎",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", "", ""]
+      },
+      "on-click": "kitty --class scratch pulsemixer"
+    },
+    "custom/banner": {
+      "exec": "~/.config/waybar/bin/banner.py",
+      "format": "<b>{0}</b>",
+      "interval": 3600,
+      "tooltip": false
+    },
+    "custom/spacer": {
+      "format": " ",
+      "tooltip": false
+    }
+  },
+  {
+    // Bar dimensions and position
+    "position": "bottom",
+    "height": 30,
+    "spacing": 5,
+    "margin": 0,
+
+    // Where to show the bar
+    "output": ["DP-6"],
+
+    // Choose the order of the modules
+    "modules-left": ["custom/spacer", "tray", "sway/mode", "custom/media"],
+    "modules-center": ["idle_inhibitor"],
+    "modules-right": ["cpu", "memory", "temperature", "backlight", "custom/spacer"],
+    "sway/mode": {
+      "format": "<span style=\"italic\">{}"
+    },
+    "idle_inhibitor": {
+      "format": "{icon}",
+      "format-icons": {
+        "activated": "",
+        "deactivated": ""
+      }
+    },
+    "cpu": {
+      "format": "<b>{usage}% CPU</b>",
+      "tooltip": false
+    },
+    "memory": {
+      "format": "<b>{}% MEM</b>"
+    },
+    "temperature": {
+      "critical-threshold": 80,
+      "format": "<b>{temperatureC}°C {icon}</b>",
+      "format-icons": ["", "", "", "", ""]
+    },
+    "backlight": {
+      "format": "<b>{percent}% {icon}</b>",
+      "format-icons": ["󰛩", "󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"]
+    },
+    "custom/media": {
+      "format": "<b>{icon} {0}</b>",
+      "return-type": "json",
+      "max-length": 40,
+      "format-icons": {
+          "spotify": " ",
+          "default": " "
+      },
+      "escape": true,
+      "exec": "~/.config/waybar/bin/mediaplayer.py"
+    },
+    "custom/spacer": {
+      "format": " ",
+      "tooltip": false
+    }
+  }
+]
